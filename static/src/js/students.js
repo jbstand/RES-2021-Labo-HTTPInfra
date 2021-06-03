@@ -6,7 +6,7 @@ $(function() {
                     console.log(students);
                     var message = "Nobody is here";
                     if( students.length > 0) {
-                            message = students[0].animal + " " + students[0].lastname;
+                            message = "Animal : " + students[0].animal + ", Profession : " + students[0].profession;
                     }
                     $(".white-text").text(message);
             });
