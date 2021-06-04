@@ -2,11 +2,7 @@
 
 ### Description
 
-This docker image based on 
-
-[Nginx]: https://github.com/nginxinc/docker-nginx
-
-contains a static HTTP website served by Nginx. The port exposed is the default HTTP one, 80.
+This docker image based on [Nginx](https://github.com/nginxinc/docker-nginx) contains a static HTTP website served by Nginx. The port exposed is the default HTTP one, 80.
 
 ### Instructions to setup container
 
