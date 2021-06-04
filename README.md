@@ -19,6 +19,36 @@ The docker image of our reverse proxy is based on [Nginx](https://hub.docker.com
 
 The page served by the static HTTP server is updated with the informations fetched (with AJAX queries, every two seconds) from the dynamic HTTP server.
 
+### AJAX code explanations
+
+```javascript
+$(function() {
+    console.log("Loading Students...");
+
+    function loadStudents() {
+            // Fetch informations (JSON) from the dynamic server
+            $.getJSON("/api/student/", function( students ) {
+                    console.log(students);
+                    // Construction of the message to show
+                    // Default value
+                    var message = "Nobody is here";
+                    if( students.length > 0) {
+                            // If there is an animal in the response, we take the first one of the array and construct the message
+                            message = "Animal : " + students[0].animal + ", Profession : " + students[0].profession;
+                    }
+                    // We update the elements of the class white-text of the page to show our message
+                    $(".white-text").text(message);
+            });
+    };
+    // We call the function to display the informations instantly at the loading
+    loadStudents();
+    // We call the method to update the message every 2 seconds
+    setInterval( loadStudents, 2000);
+});
+```
+
+Comments inline.
+
 ### Configuration	
 
 ##### Dockerfile
