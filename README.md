@@ -51,7 +51,7 @@ The docker image of our reverse proxy is based on [Nginx](https://hub.docker.com
 
 ### Instructions to setup container
 
-##### Build images
+##### Build backend images
 
 To setup the infrastructure  you first need to build the image of our static website :
 
@@ -65,13 +65,7 @@ Then you need to build our dynamic REST API :
 docker build -t melmot/dynamic dynamic/ #if you're at the root of the project
 ```
 
-And finally, you will need to build the reverse proxy image : 
-
-```shell
-docker build -t melmot/reverse reverse/ #if you're at the root of the project
-```
-
-##### Run containers
+##### Run backend containers
 
 First, you need to run the static container without exposing the ports :
 
@@ -79,11 +73,35 @@ First, you need to run the static container without exposing the ports :
 docker run melmot/static 
 ```
 
+Then you can write down it's IP :
+
+```
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' melmot/static
+```
+
 Second, you need to run the dynamic container without exposing the ports : 
 
 ```
 docker run melmot/dynamic 
 ```
+
+Then you can write down it's IP :
+
+```
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' melmot/dynamic
+```
+
+### Build reverse proxy image
+
+Update the nginx configuration file (reverse/conf/conf.d/default.conf) with the IPs of the static and dynamic containers.
+
+Then build the reverse proxy image : 
+
+```shell
+docker build -t melmot/reverse reverse/ #if you're at the root of the project
+```
+
+### Run reverse proxy container
 
 Finally, you need to run the reverse proxy container exposing the ports to be able to contact it : 
 
