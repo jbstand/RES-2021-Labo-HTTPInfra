@@ -41,7 +41,7 @@ The page served by the static HTTP server is updated with the informations fetch
 
 In this script, we are mapping the environment variables (given in the command to run the docker container) with the variables inside our Nginx configuration.
 
-We use the sed command to replace the terms STATIC_URL and DYNAMIC_URL with the values in the environment variables STATIC_APP and DYNAMIC_APP.
+We use the sed command to replace the terms STATIC_URL and DYNAMIC_URL with the values in the environment variables STATIC_APP and DYNAMIC_APP in the Nginx configuration file.
 
 Then we start our server without deamons.
 
