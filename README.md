@@ -75,7 +75,7 @@ Finally we start our server without deamons.
 
 - **listen** : server is listening to the port 80
 - **upstream static_backend** : define an IPs cluster to which redirect the queries. It contains the IPs of our different static servers
-  - **ip_hash** : define that the load balancing will be with sticky-session
+  - **ip_hash** : define that the load balancing will be with sticky-session using the IP Hash algorithm
 - **upstream dynamic_backend** : define an IPs cluster to which redirect the queries. It contains the IPs of our different dynamic servers
 - **location /** : all request starting with **/** will get redirected to the static container
   - **STATIC_BACKEND** is a variable (list of servers with their ip) and gets mapped with the setup script 
