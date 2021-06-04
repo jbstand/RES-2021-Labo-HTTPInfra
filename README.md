@@ -16,7 +16,7 @@
 
 ### Description
 
-The docker image of our dynamic reverse proxy is based on [Nginx](https://hub.docker.com/_/nginx) contains a configuration to dispatch request to the right container. The server has two endpoint : ***\*/\****, which redirect to the static docker and the second endpoint : **/api/student**. The port exposed is the default HTTP port which is 80.
+The docker image of our dynamic reverse proxy is based on [Nginx](https://hub.docker.com/_/nginx) contains a configuration to dispatch request to the right container. The server has two endpoint : ***\*/\****, which redirect to the static docker and the second endpoint : **/api/student**. The port exposed is the default HTTP port which is 80. The environment variables STATIC_APP and DYNAMIC_APP passed with -e in the run command will update the nginx configuration.
 
 The page served by the static HTTP server is updated with the informations fetched (with AJAX queries, every two seconds) from the dynamic HTTP server.
 
@@ -39,7 +39,7 @@ The page served by the static HTTP server is updated with the informations fetch
 
 ![](img/setup.PNG)
 
-In this script, we are mapping the environment variables given in the command to run the docker on the variables inside our sub configuration for Nginx.
+In this script, we are mapping the environment variables (given in the command to run the docker container) with the variables inside our Nginx configuration.
 
 Then we start our server without deamons.
 
