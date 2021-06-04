@@ -7,6 +7,7 @@ RUN apt-get update && \
 COPY conf/nginx.conf /etc/nginx/nginx.conf
 COPY conf/conf.d /etc/nginx/conf.d
 COPY setup.sh /usr/local/bin/
+RUN ["chmod", "755", "/usr/local/bin/setup.sh"]
 
 EXPOSE 80
 
