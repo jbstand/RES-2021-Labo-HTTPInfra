@@ -1,0 +1,34 @@
+upstream static_backend {
+    ip_hash;
+STATIC_BACKEND}
+
+upstream dynamic_backend {
+    ip_hash;
+DYNAMIC_BACKEND}
+
+
+server {
+    listen 80;
+
+    location / {
+        proxy_pass http://static_backend;   
+    }
+
+    # Usage of strict location in order to not pass the trailing / to node when calling /api/student/
+    location = /api/student/ {
+        proxy_pass http://dynamic_backend/;
+    }
+    location = /api/student {
+        # proxy_set_header Upgrade $http_upgrade;
+        # proxy_set_header Connection "upgrade";
+
+        # proxy_set_header X-Real_IP $remote_addr;
+        # proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        # proxy_set_header Host $http_host;
+        # proxy_set_header X-NginX-Proxy true;
+
+        # # This is necessary to pass the correct IP to be hashed
+        # real_ip_header X-Real-IP;
+        proxy_pass http://dynamic_backend/;
+    }
+}
