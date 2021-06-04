@@ -1,8 +1,6 @@
 # Docker Container running multiple servers and a dynamic proxy with load-balancing to distribute the traffic and a cluster management
 
-# Docker Container running multiple servers and a dynamic proxy with load-balancing (sticky session) to distribute the traffic.
-
-- ## Docker Container running multiple servers and a dynamic proxy with load-balancing (sticky session) to distribute the traffic.
+- ## Docker Container running multiple servers and a dynamic proxy with load-balancing to distribute the traffic and a cluster management.
 
   + [Description](#description)
   + [Configuration](#configuration)
