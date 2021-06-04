@@ -1,6 +1,12 @@
 # Docker Container running a static HTTP server
 
-[TOC]
+- ## Table of contents
+    + [Description](#description)
+    + [Configuration](#configuration)
+        * [Dockerfile](#dockerfile)
+        * [Nginx](#nginx)
+    + [Instructions to setup container](#instructions-to-setup-container)
+    + [Accessing content](#accessing-content)
 
 ### Description
 
