@@ -7,7 +7,7 @@ docker run -e DYNAMIC_BACKEND="172.17.0.5:3000 172.17.0.6:3000" -e STATIC_BACKEN
 Fill report here plzplz
 
 
-
+```bash
 #!/bin/bash
 
 # Add setup for RES lab
@@ -81,3 +81,4 @@ do
     fi
   done
 done
+```
