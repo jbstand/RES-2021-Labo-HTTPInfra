@@ -10,4 +10,5 @@ COPY setup.sh /usr/local/bin/
 
 EXPOSE 80
 
-CMD ["setup.sh"]
+ENTRYPOINT ["setup.sh"]
+CMD ["run"]
