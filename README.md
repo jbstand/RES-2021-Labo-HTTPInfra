@@ -1,8 +1,10 @@
-# Docker Container running multiple servers and a dynamic proxy with load-balancing to distribute the traffic.
+# Docker Container running multiple servers and a dynamic proxy with load-balancing to distribute the traffic and a cluster management
 
 Nginx default load-balancing -> round-robin
 
 docker run -e DYNAMIC_BACKEND="172.17.0.5:3000 172.17.0.6:3000" -e STATIC_BACKEND="172.17.0.2 172.17.0.3" --name melmot_sticky -p 5555:80 melmot/sticky
+
+
 
 Fill report here plzplz
 
@@ -78,7 +80,6 @@ do
     fi
     # On envoie une requete GET sur le port 3000 et on stock le resultat dans reponse
     response=$(curl -s $ip:3000 --connect-timeout 0.1)
-    # echo "Comparing ${response:0:2}"
     # Si la reponse commence par le début d'un tableau JSON (vide ou non)
     if [ "${response:0:2}" = "[{" ] || [ "${response:0:2}" = "[]" ];
     then
