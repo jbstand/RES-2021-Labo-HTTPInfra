@@ -4,6 +4,26 @@
 
 This docker image based on [Nginx](https://github.com/nginxinc/docker-nginx) contains a static HTTP website served by Nginx. The port exposed is the default HTTP one, 80.
 
+### Configuration
+
+##### Dockerfile
+
+![](img\dockerfile.PNG)
+
+1. We take the latest Nginx image from the Docker Hub
+2. We copy the src folder (containing the sources) to the folder served by nginx (*/usr/share/nginx/html*)
+3. We copy the server configuration in the docker image of Nginx server
+4. We update the package repository of our image operating system
+5. We install vim to be able to debug the Nginx server
+6. We are exposing our traffic to the default HTTP port, 80 
+
+##### Nginx
+
+![](img\nginx.PNG)
+
+- **events** : this statement is mandatory in the configuration. It is for setting the context of our server. Here we don't need any particular global options
+- **location /** : Every URL that starts with **/** will use the files that are located in **root** html folder(which means our *index.html* located in */usr/share/nginx/html*)
+
 ### Instructions to setup container
 
 To setup the container, you first need to build the image :
