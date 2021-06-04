@@ -20,7 +20,7 @@ The docker image of our dynamic reverse proxy is based on [Nginx](https://hub.do
 
 The page served by the static HTTP server is updated with the informations fetched (with AJAX queries, every two seconds) from the dynamic HTTP server.
 
-We configured the Nginx server for load-balancing between various static and dynamic backend, sticky-session fashionned.
+We configured the Nginx server for load-balancing between various static and dynamic backend, sticky-session fashionned for the static one and round-robin fashionned for the dynamic one.
 
 The setup script will use a list of IPs (space separated) to update the dynamic and static backend (upstream) of the Nginx configuration, allowing the user to define the configuration at runtime using the -e argument of the docker run command.
 
