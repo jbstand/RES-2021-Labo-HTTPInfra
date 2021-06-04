@@ -8,7 +8,7 @@ This docker image based on [Nginx](https://github.com/nginxinc/docker-nginx) con
 
 ##### Dockerfile
 
-![](img\dockerfile.PNG)
+![](img/dockerfile.PNG)
 
 1. We take the latest Nginx image from the Docker Hub
 2. We copy the src folder (containing the sources) to the folder served by nginx (*/usr/share/nginx/html*)
@@ -19,7 +19,7 @@ This docker image based on [Nginx](https://github.com/nginxinc/docker-nginx) con
 
 ##### Nginx
 
-![](img\nginx.PNG)
+![](img/nginx.PNG)
 
 - **events** : this statement is mandatory in the configuration. It is for setting the context of our server. Here we don't need any particular global options
 - **location /** : Every URL that starts with **/** will use the files that are located in **root** html folder(which means our *index.html* located in */usr/share/nginx/html*)
