@@ -28,9 +28,9 @@ The endpoint **/** returns an array of JSON objects :
 3. We update the package repository of our image operating system
 5. We install vim to be able to debug the node server
 5. We specify the directory where we want to work and execute our instructions
-6. We install all the dependency for our javascript application
+6. We install all the dependencies for our javascript application
 7. We are exposing our traffic to the default express js port, 3000
-8. We run the node server with our javascript application 
+8. We run the node server with our javascript application
 
 ### Instructions to setup container
 
