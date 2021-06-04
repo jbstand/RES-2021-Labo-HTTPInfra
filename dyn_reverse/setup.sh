@@ -10,14 +10,14 @@ static_backend=""
 
 for i in $STATIC_BACKEND
 do
-static_backend="$static_backend\tserver $i;\n"
+static_backend="$static_backend\tserver $i weight=100 max_fails=5 fail_timeout=300;\n"
 done
 
 dynamic_backend=""
 
 for i in $DYNAMIC_BACKEND
 do
-dynamic_backend="$dynamic_backend\tserver $i;\n"
+dynamic_backend="$dynamic_backend\tserver $i weight=100 max_fails=5 fail_timeout=300;\n"
 done
 
 sed -i "s/STATIC_BACKEND/$static_backend/" /etc/nginx/conf.d/default.conf
