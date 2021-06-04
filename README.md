@@ -36,7 +36,7 @@ The docker image of our reverse proxy is based on [Nginx](https://hub.docker.com
 
 - **events** : this statement is mandatory in the configuration. It is for setting the context of our server. Here we don't need any particular global options
 - **http** : 
-  - **include** : to be able to show all the MIME types encoding
+  - **include** : to be able to support all the MIME types encoding
   - **log_format** : to get logs in the windows where you run the container
   - **access_log** : logs on the server
   - **include** : including all sub configurations
@@ -45,7 +45,7 @@ The docker image of our reverse proxy is based on [Nginx](https://hub.docker.com
 
 ![](img/default.PNG)
 
-- **listen** : servre is listenning to the port 80
+- **listen** : server is listenning to the port 80
 - **location /** : all request starting with **/** will get redirected to the static container
 - **location = /api/student/** & **location = /api/student** : all request that are stricly /api/student or /api/student/ will get redirected to the dynamic container
 
