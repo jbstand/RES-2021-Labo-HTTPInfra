@@ -30,7 +30,7 @@ This docker image based on [Nginx](https://github.com/nginxinc/docker-nginx) con
 ![](img/nginx.PNG)
 
 - **events** : this statement is mandatory in the configuration. It is for setting up the context of our nginx instance. In our case, we don't need any particular global options.
-- **location /** : Every URL that starts with **/** will use the files that are located in **root** html folder(which means our *index.html* located in */usr/share/nginx/html*)
+- **location /** : Every URL that starts with **/** will use the files that are located in the **root** html folder(which means our *index.html* located in */usr/share/nginx/html*)
 
 ### Instructions to setup container
 
