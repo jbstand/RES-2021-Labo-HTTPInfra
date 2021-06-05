@@ -109,7 +109,7 @@ Finally, you need to run the reverse proxy container exposing the ports to be ab
 docker run -p %your_local_port%:80 melmot/reverse 
 ```
 
-We already create a little script (**setup.sh**) at the root of the project to do the all the steps above, mapping the reverse proxy on the port **2222**.
+We already create a little script (**setup.sh**) at the root of the project to do the all the steps above, mapping the reverse proxy on the port **3333**.
 
 ### Accessing content
 
