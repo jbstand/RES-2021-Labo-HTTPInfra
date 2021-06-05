@@ -46,7 +46,7 @@ Then you can run the built image :
 docker run -p %your_local_port%:80 melmot/static 
 ```
 
-We already create a little script (**setup.sh**) at the root of the project to do the two step above, mapping on the port **5555**.
+We already create a little script (**setup.sh**) at the root of the project to do the two step above, mapping on the port **1111**.
 
 ### Accessing content
 
