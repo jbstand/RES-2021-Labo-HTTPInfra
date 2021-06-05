@@ -113,7 +113,7 @@ Finally, you need to run the dynamic reverse proxy container exposing the ports 
 docker run -e DYNAMIC_BACKEND="%one_dynamic_app_ip%:%one_dynamic_app_port% ..." -e STATIC_APP="%one_static_app_ip%:%one_static_app_port% ..." --name load_balancer -p %your_local_port%:80 melmot/load_balancer
 ```
 
-We already create a little script (**setup.sh**) at the root of the project to do the all the steps above, mapping the reverse proxy on the port **4444**.
+We already create a little script (**setup.sh**) at the root of the project to do the all the steps above, mapping the reverse proxy on the port **6666**.
 
 ### Accessing content
 
