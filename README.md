@@ -107,7 +107,7 @@ Finally, you need to run the dynamic reverse proxy container exposing the ports 
 docker run -e DYNAMIC_APP=%your_dynamic_app_ip%:%your_dynamic_app_port% -e STATIC_APP=%your_static_app_ip%:%your_static_app_port% --name dyn_reverse -p %your_local_port%:80 melmot/dyn_reverse
 ```
 
-We already create a little script (**setup.sh**) at the root of the project to do the all the steps above, mapping the reverse proxy on the port **4444**.
+We already create a little script (**setup.sh**) at the root of the project to do the all the steps above, mapping the reverse proxy on the port **5555**.
 
 ### Accessing content
 
