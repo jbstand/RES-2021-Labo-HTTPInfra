@@ -6,4 +6,4 @@ docker build -t melmot/reverse reverse/
 #Running containers
 docker run melmot/static 
 docker run melmot/dynamic 
-docker run -p 3333:80 melmot/reverse 
+docker run -p 4444:80 melmot/reverse 
