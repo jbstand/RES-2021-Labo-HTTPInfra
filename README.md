@@ -46,7 +46,7 @@ Then you can run the built image :
 docker run -p %your_local_port%:3000 melmot/dynamic 
 ```
 
-We already create a little script (**setup.sh**) at the root of the project to do the two step above, mapping on the port **1111**.
+We already create a little script (**setup.sh**) at the root of the project to do the two step above, mapping on the port **2222**.
 
 ### Accessing content
 
